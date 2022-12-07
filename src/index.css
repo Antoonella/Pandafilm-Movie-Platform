@@ -248,3 +248,27 @@ input:focus {
   right: 20px;
   top: auto;
 }
+
+.movies__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 150px 20px 150px;
+}
+
+.section__title {
+  margin-bottom: 0;
+}
+
+select {
+  background-color: #fff;
+  border-radius: 4px;
+  border: 1px solid #dcdfe6;
+  color: #606266;
+  height: 40px;
+  line-height: 40px;
+  outline: none;
+  padding: 0 16px;
+  width: 100%;
+  max-width: 200px;
+}

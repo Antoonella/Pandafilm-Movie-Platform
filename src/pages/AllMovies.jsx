@@ -13,6 +13,19 @@ function AllMovies() {
   //   fetchMovies(searchMovie);
   // }
 
+  function filterMovies(filter) {
+    console.log(filter);
+    if (filter === "NEW_TO_OLD") {
+      setMovies(movies.slice().sort((a, b) => b.Year - a.Year));
+    }
+    if (filter === "OLD_TO_NEW") {
+      setMovies(movies.slice().sort((a, b) => a.Year - b.Year));
+    }
+    if (filter === "A_Z") {
+      setMovies(movies.slice().sort((a, b) => a.Title.localeCompare(b.Title)));
+    }
+  }
+
   async function fetchMovies(movieTitle) {
     setLoading(true);
     const { data } = await axios.get(
@@ -28,7 +41,23 @@ function AllMovies() {
 
   return (
     <>
-    <Search fetchMovies={fetchMovies} movie={movie}/>
+      <Search fetchMovies={fetchMovies} movie={movie} />
+      <div className="movies__header">
+        <h2 className="section__title">Search results for </h2>
+        <select
+          id="filter"
+          defaultValue="DEFAULT"
+          onChange={(event) => filterMovies(event.target.value)}
+        >
+          <option value="DEFAULT" disabled>
+            Sort
+          </option>
+          <option value="NEW_TO_OLD">Newest to Oldest</option>
+          <option value="OLD_TO_NEW">Oldesr to Newest</option>
+          <option value="A_Z">A to Z</option>
+        </select>
+      </div>
+
       {loading ? (
         new Array(10).fill(0).map((_, index) => (
           <div className="movie" key={index}>
