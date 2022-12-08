@@ -3,18 +3,22 @@ import Nav from './components/Nav';
 import Home from './pages/Home';
 import MovieInfo from './pages/MovieInfo';
 import AllMovies from './pages/AllMovies';
-import Search from './pages/Search';
+import { useParams } from "react-router-dom";
+import Footer from './components/Footer';
 
-function App() {
+
+function App(props) {
+
   return (
     <Router>
     <div className="App">  
     <Nav />
     <Routes>
       <Route path='/' exact element={<Home />}></Route>
-      <Route path='/:search' exact element={<AllMovies />} />
-      {/* <Route path='/movies/:id' element={<MovieInfo />}></Route> */}
+      <Route path='/movie' exact element={<AllMovies/>}></Route>
+      <Route path='/movie/:id' element={<MovieInfo />}></Route>
     </Routes>
+    <Footer />
     </div>
     </Router>
   );

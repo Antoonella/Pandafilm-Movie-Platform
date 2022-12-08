@@ -6,7 +6,7 @@ function Nav() {
   return (
     <nav>
       <div className="nav__container">
-      <Link>
+      <Link to="/">
       <img src={Logo} className='logo' alt="" />
       </Link>
       <ul className="nav__links">
@@ -16,14 +16,12 @@ function Nav() {
           </Link>
         </li>
         <li className="nav__list">
-          <Link to="/allmovies" className='nav__link'>
+          <Link to="/movie" className='nav__link'>
             Find your movie
           </Link>
         </li>
         <li className="nav__list">
-          <Link to="/" className='nav__link'>
-            Contact
-          </Link>
+          <span className='nav__link no-cursor'>Contact</span>
         </li>
       </ul>
       </div>

@@ -1,20 +1,16 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import Movie from "../components/ui/Movie";
 import Search from "./Search";
 
 function AllMovies() {
   const { movie } = useParams();
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState();
-  // const [searchMovie, setSearchMovie] = useState(movie);
-
-  // function onSearch() {
-  //   fetchMovies(searchMovie);
-  // }
+  const [text, setText] = useState("");
 
   function filterMovies(filter) {
-    console.log(filter);
     if (filter === "NEW_TO_OLD") {
       setMovies(movies.slice().sort((a, b) => b.Year - a.Year));
     }
@@ -31,6 +27,7 @@ function AllMovies() {
     const { data } = await axios.get(
       `https://www.omdbapi.com/?apikey=fe87177d&s=${movieTitle || movie}`
     );
+    setText(movieTitle || movie);
     setMovies(data.Search);
     setLoading(false);
   }
@@ -40,14 +37,20 @@ function AllMovies() {
   }, []);
 
   return (
-    <>
-      <Search fetchMovies={fetchMovies} movie={movie} />
+    <div className="movies__container">
+    <Search movies={movies} fetchMovies={fetchMovies}/>
       <div className="movies__header">
-        <h2 className="section__title">Search results for </h2>
+        {
+          text? (
+            <h2 className="section__title">Search results for: <span className="blue">{text}</span></h2>
+          ) : (
+            <h2 className="section__title">All Movies</h2>
+          )
+        } 
         <select
           id="filter"
           defaultValue="DEFAULT"
-          onChange={(event) => filterMovies(event.target.value)}
+          onChange={(event) => filterMovies(event.target.value)} 
         >
           <option value="DEFAULT" disabled>
             Sort
@@ -57,8 +60,7 @@ function AllMovies() {
           <option value="A_Z">A to Z</option>
         </select>
       </div>
-
-      {loading ? (
+       {loading ? (
         new Array(10).fill(0).map((_, index) => (
           <div className="movie" key={index}>
             <div className="movie-card">
@@ -78,41 +80,9 @@ function AllMovies() {
           </div>
         ))
       ) : (
-        <div className="container">
-          <div className="row">
-            <div className="movie-list">
-              {movies
-                .filter((elem) => elem)
-                .slice(0, 6)
-                .map((movie) => (
-                  <div className="movie" key={movie.imdbID}>
-                    <div className="movie-card">
-                      <div className="movie-card__container">
-                        <figure className="movie__img--wrapper">
-                          <img
-                            className="movie__img"
-                            src={movie.Poster}
-                            alt=""
-                          />
-                        </figure>
-                        <h2 className="movie__title">{movie.Title}</h2>
-                        <h3 className="movie__year">{movie.Year}</h3>
-                        <a
-                          href={`https://imdb.com/title/${movie.imdbID}`}
-                          className="imdb"
-                          target="_blank"
-                        >
-                          Imdb
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                ))}
-            </div>
-          </div>
-        </div>
+        <Movie movies={movies}/>
       )}
-    </>
+    </div>
   );
 }
 
