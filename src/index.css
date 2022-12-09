@@ -100,7 +100,7 @@ Home Page
 #home {
   background-color: black;
   background-image: linear-gradient(to top right,rgb(42, 42, 42), black);
-  height: 730px;
+  height: 710px;
 }
 
 .header__title {
@@ -224,8 +224,9 @@ Home Page
 }
 
 .movie-card {
-  /* background-color: #000;
-  background-image: linear-gradient(to bottom right,rgb(50, 50, 50), black); */
+  background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgba(193, 190, 190, 0.826));
+  /* box-shadow: 1px 1px 20px 2px rgb(245 245 245 / 60%); */
+  /* box-shadow: 1px 1px 20px 2px rgb(245 245 245 / 60%); */
   height: 100%;
   max-height: 551px;
   width: 100%;
@@ -339,6 +340,7 @@ input:focus {
 
 .section__title {
   margin-bottom: 0;
+  color: #f9f9f9;
 }
 
 select {
@@ -354,10 +356,6 @@ select {
   max-width: 200px;
 }
 
-.blue {
-  font-size: 28px;
-  color: blue;
-}
 
 /* 
 
@@ -383,7 +381,7 @@ MOVIE DETAILS
 }
 
 .movieInfo__img {
-  width: 450px;
+  width: 400px;
   height: 550px;
 }
 
@@ -391,10 +389,7 @@ MOVIE DETAILS
   font-size: 55px;
   color: #f9f9f9;
   font-family: 'Montserrat', sans-serif;
-}
-
-.movieDetails {
-
+  max-width: 660px;
 }
 
 .first__container {
@@ -420,7 +415,7 @@ MOVIE DETAILS
   margin-left: 8px;
 }
 
-.movie__year {
+.movieInfo__year {
   font-size: 12px;
   color: #f9f9f9;
   margin-left: 8px;
@@ -436,10 +431,6 @@ MOVIE DETAILS
   font-weight: 100;
 }
 
-.second__container {
-
-}
-
 .movie__description {
   font-size: 20px;
   color: #f9f9f9;
@@ -447,6 +438,7 @@ MOVIE DETAILS
   letter-spacing: -.1px;
   line-height: 1.6;
   font-family: 'Montserrat', sans-serif;
+  max-width: 660px;
 }
 
 .play__btn {
@@ -480,6 +472,14 @@ MOVIE DETAILS
   cursor: not-allowed;
 }
 
+.back__btn {
+  border: none;
+  font-size: 17px;
+  background: transparent;
+  color: #f9f9f9;
+  margin-bottom: 60px;
+  cursor: pointer;
+}
 
 /* 
 
@@ -527,8 +527,6 @@ footer {
   color: #CACACA;
   font-size: 12px;
 }
-
-
 
 .footer__link {
   padding: 0 8px;

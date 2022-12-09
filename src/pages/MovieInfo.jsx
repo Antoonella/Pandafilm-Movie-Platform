@@ -1,12 +1,13 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 
 function MovieInfo() {
   const { id } = useParams();
   const [movies, setMovieInfo] = useState(null);
   let content = null;
+  let navigate = useNavigate();
 
   async function fetchMovieInfo() {
     const { data } = await axios.get(
@@ -22,17 +23,19 @@ function MovieInfo() {
 
   return (
     <div >
+       
       {movies? 
       (content = 
       <div className="movieInfo__container">
         <div className="movieInfo">
+        <button className="back__btn" onClick={() => navigate('/movie')}>← Back</button>
           <h1 className="movieInfo__title">{movies.Title}</h1>
           <div className="movieDetails">
             <div className="first__container">
               <div>
                 <span className="movie__rating">{movies.Rated}</span>
                 <span className="movie__type">{movies.Type}</span>
-                <span className="movie__year">{movies.Year} • {movies.Runtime}</span>
+                <span className="movieInfo__year">{movies.Year} • {movies.Runtime}</span>
               </div>
               <div className="movie__genre--container">
                 <span className="movie__genre">{movies.Genre}</span>

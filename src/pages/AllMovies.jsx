@@ -42,7 +42,7 @@ function AllMovies() {
       <div className="movies__header">
         {
           text? (
-            <h2 className="section__title">Search results for: <span className="blue">{text}</span></h2>
+            <h2 className="section__title">Search results for: <i>"{text}"</i></h2>
           ) : (
             <h2 className="section__title">All Movies</h2>
           )
