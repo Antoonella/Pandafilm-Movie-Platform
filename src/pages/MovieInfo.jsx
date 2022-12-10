@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Logoo from "../assets/logo.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function MovieInfo() {
   const { id } = useParams();
@@ -46,7 +47,10 @@ function MovieInfo() {
                 </div>
                 <div className="second__container">
                   <button className="play__btn">
-                    <p className="play__btn--para">PLAY</p>
+                  <div className="btn__container">
+                  <FontAwesomeIcon icon="fa-solid fa-play" />
+                  <p className="play__btn--para">PLAY</p>
+                  </div>
                   </button>
                   <button className="btn__tralier">TRAILER</button>
                 </div>
