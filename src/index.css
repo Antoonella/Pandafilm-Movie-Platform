@@ -481,6 +481,78 @@ MOVIE DETAILS
   cursor: pointer;
 }
 
+.movieInfo__skeleton--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.moveInfo__skeleton {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-top: 50px;
+}
+
+.movieInfo__skeleton--title {
+  width: 340px;
+  height: 50px;
+  background-color: lightgray;
+  background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgba(116, 116, 116, 0.826));
+}
+
+.movieInfo__skeleton--btns {
+  display: flex;
+}
+
+.movieInfo__skeleton--btnOne {
+  width: 110px;
+  height: 50px;
+  background-color: lightgray;
+  margin-right: 16px;
+  background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgba(116, 116, 116, 0.826));
+}
+
+.movieInfo__skeleton--btnTwo {
+  width: 110px;
+  height: 50px;
+  background-color: lightgray;
+  background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgba(116, 116, 116, 0.826));
+}
+
+.movieInfo__skeleton--descriptionOne {
+  margin-top: 30px;
+  width: 500px;
+  height: 20px;
+  background-color: lightgray;
+  background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgba(116, 116, 116, 0.826));
+}
+
+.movieInfo__skeleton--descriptionTwo {
+  margin-top: 10px;
+  width: 350px;
+  height: 20px;
+  background-color: lightgray;
+  background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgba(116, 116, 116, 0.826));
+}
+
+.movieInfo__skeleton--descriptionThree {
+  margin-top: 10px;
+  width: 200px;
+  height: 20px;
+  background-color: lightgray;
+  background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgba(116, 116, 116, 0.826));
+}
+
+
+.movieInfo__skeleton--img {
+  width: 400px;
+  height: 550px;
+  background-color: lightgray;
+  background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgba(116, 116, 116, 0.826));
+
+}
 /* 
 
 FOOTER 
