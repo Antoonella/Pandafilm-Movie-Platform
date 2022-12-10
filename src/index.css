@@ -9,6 +9,10 @@ body {
   background-image: linear-gradient(to top right,rgb(42, 42, 42), black);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 ul {
   display: flex;
 }
@@ -89,6 +93,29 @@ nav {
 .landing__img {
   width: 500px;
   height: 600px;
+}
+
+.link__hover-effect {
+  position: relative;
+}
+
+.link__hover-effect:after {
+  content: "";
+  position: absolute;
+  bottom: -0.1px;
+  height: 3px;
+  width: 0;
+  right: 0;
+  transition: all 300ms ease;
+}
+
+.link__hover-effect--white:after {
+  background-color: #fff;
+}
+
+.link__hover-effect:hover:after {
+  left: 0;
+  width: 100%;
 }
 
 /* 
@@ -356,6 +383,25 @@ select {
   max-width: 200px;
 }
 
+.PageNotFound__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.pageNotFound__img {
+  width: 250px;
+  height: 250px;
+}
+
+.pageNotFound__title {
+  margin-top: 0px;
+  color: #f9f9f9;
+  text-align: center;
+  font-size: 60px;
+}
 
 /* 
 

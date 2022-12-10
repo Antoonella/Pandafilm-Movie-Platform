@@ -40,11 +40,10 @@ function AllMovies() {
     <div className="movies__container">
     <Search movies={movies} fetchMovies={fetchMovies}/>
       <div className="movies__header">
-        {
-          text? (
+        {text? (
             <h2 className="section__title">Search results for: <i>"{text}"</i></h2>
           ) : (
-            <h2 className="section__title">All Movies</h2>
+            <h2 className="section__title">Explore movies</h2>
           )
         } 
         <select
@@ -79,7 +78,7 @@ function AllMovies() {
             </div>
           </div>
         ))
-      ) : (
+      ) : ( 
         <Movie movies={movies}/>
       )}
     </div>

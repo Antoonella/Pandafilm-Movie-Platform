@@ -11,12 +11,12 @@ function Nav() {
       </Link>
       <ul className="nav__links">
         <li className="nav__list">
-          <Link to="/" className='nav__link'>
+          <Link to="/" className='nav__link link__hover-effect link__hover-effect--white'>
             Home
           </Link>
         </li>
         <li className="nav__list">
-          <Link to="/movie" className='nav__link'>
+          <Link to="/movie" className='nav__link link__hover-effect link__hover-effect--white'>
             Find your movie
           </Link>
         </li>

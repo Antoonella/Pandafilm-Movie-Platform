@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Logoo from '../../assets/logo.png';
 
 function Movie({ movies }) {
   let navigate = useNavigate();
@@ -8,7 +9,9 @@ function Movie({ movies }) {
     <div className="container">
           <div className="row">
             <div className="movie-list">
-              {movies
+              {
+                movies? (
+                  movies
                 .filter((elem) => elem)
                 .slice(0, 6)
                 .map((movie) => ( 
@@ -16,11 +19,22 @@ function Movie({ movies }) {
                     <div className="movie-card">
                       <div className="movie-card__container">
                         <figure className="movie__img--wrapper">
-                          <img
+                          {
+                            movie.Poster === "N/A"? (
+                            <img
+                            className="movie__img"
+                            src={Logoo}
+                            alt=""
+                          />
+                            ) : (
+                            <img
                             className="movie__img"
                             src={movie.Poster}
                             alt=""
                           />
+                            )
+                          }
+                          
                         </figure>
                         <h2 className="movie__title">{movie.Title}</h2>
                         <h3 className="movie__year">{movie.Year}</h3>
@@ -34,7 +48,16 @@ function Movie({ movies }) {
                       </div>
                     </div>
                   </div>
-                ))}
+                ))
+                ) : (
+                  <div className="PageNotFound__container">
+                  <figure>
+                    <img className="pageNotFound__img" src={Logoo} alt="" />
+                  </figure>
+                  <h2 className="pageNotFound__title">Page Not Found</h2>
+                  </div>
+                )
+              }
             </div>
           </div>
         </div>

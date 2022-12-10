@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
+import Logoo from "../assets/logo.png";
 
 function MovieInfo() {
   const { id } = useParams();
@@ -54,7 +55,11 @@ function MovieInfo() {
             </div>
             <div className="img__poster">
               <figure className="movieInfo__img--container">
-                <img className="movieInfo__img" src={movies.Poster} alt="" />
+                {movies.Poster === "N/A" ? (
+                  <img className="movieInfo__img" src={Logoo} alt="" />
+                ) : (
+                  <img className="movieInfo__img" src={movies.Poster} alt="" />
+                )}
               </figure>
             </div>
           </div>
@@ -64,8 +69,8 @@ function MovieInfo() {
           <div className="moveInfo__skeleton">
             <h1 className="movieInfo__skeleton--title"></h1>
             <div className="movieInfo__skeleton--btns">
-            <div className="movieInfo__skeleton--btnOne"></div>
-            <div className="movieInfo__skeleton--btnTwo"></div>
+              <div className="movieInfo__skeleton--btnOne"></div>
+              <div className="movieInfo__skeleton--btnTwo"></div>
             </div>
             <div className="movieInfo__skeleton--descriptionOne"></div>
             <div className="movieInfo__skeleton--descriptionTwo"></div>
