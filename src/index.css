@@ -124,12 +124,6 @@ Home Page
 
 */
 
-#home {
-  background-color: black;
-  background-image: linear-gradient(to top right,rgb(42, 42, 42), black);
-  height: 710px;
-}
-
 .header__title {
   display: flex;
   flex-direction: column;
@@ -603,7 +597,6 @@ MOVIE DETAILS
   height: 550px;
   background-color: lightgray;
   background-image: linear-gradient(to bottom right,rgb(255, 255, 255), rgba(116, 116, 116, 0.826));
-
 }
 /* 
 
@@ -658,6 +651,9 @@ footer {
 
 /* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
 @media (max-width: 768px) { 
+  .logo {
+    width: 92px;
+  }
   .landing {
     flex-wrap: wrap-reverse;
   }
@@ -680,7 +676,6 @@ footer {
   }
   .movies__header {
     padding: 0 30px;
-    margin-top: 30px;
   }
   .row {
     padding: 0px 30px;
@@ -714,10 +709,113 @@ footer {
   .movieInfo__container {
     flex-wrap: wrap-reverse;
   }
+  .movieInfo__img {
+    width: 300px;
+    height: 450px;
+  }
+  .movieInfo {
+    width: 100%;
+    margin: 0px 35px;
+  }
+  .movieInfo__title {
+    font-size: 35px;
+  }
+  .movie__description {
+    font-size: 18px;
+  }
+  .back__btn {
+    display: none;
+  }
+  .movieInfo__skeleton--container {
+    flex-wrap: wrap-reverse;
+  }
+  .movieInfo__skeleton--title {
+    width: 300px;
+    height: 30px;
+  }
+  .movieInfo__skeleton--btnOne, .movieInfo__skeleton--btnTwo {
+    width: 90px;
+    height: 40px;
+  }
+  .movieInfo__skeleton--descriptionOne {
+    margin-top: 30px;
+    width: 400px;
+    height: 20px;
+  }
 }
 
 
 /* SMALL PHONES, LARGE SMARTPHONES */
 @media (max-width: 550px) {
-
+  nav {
+    height: 80px;
+  }
+  .logo, .footer__logo--img {
+    width: 70px;
+  }
+  .hidelink {
+    display: none;
+  }
+  .nav__link {
+    font-size: 16px;
+  }
+  .landing__img {
+    width: 300px;
+    height: 400px; 
+  }
+  .glow-on-hover {
+    font-size: 17px;
+    padding: 17px 31px;
+  }
+  .search__input {
+    font-size: 24px;
+    height: 60px;
+    max-width: 506px;
+  }
+  .section__title {
+    font-size: 17px;
+    margin: 0;
+  }
+  select {
+    height: 30px;
+    max-width: 130px;
+  }
+  .movie {
+    width: 50%;
+  }
+  .movie-card {
+    width: 220px;
+    height: 385px;
+  }
+  .movie-card__container {
+    padding: 13px 11px;
+  }
+  .movie__title {
+    font-size: 18px;
+  }
+  .movie__img--skeleton {
+    width: 130px;
+    height: 140px;
+  }
+  .movie__title--skeleton {
+    width: 120px;
+    height: 20px;
+    margin-bottom: 6px;
+  }
+  .movie__year--skeleton {
+    margin-bottom: 6px;
+    width: 90px;
+    height: 20px;
+  }
+  .movieInfo__img {
+    width: 200px;
+    height: 350px;
+  }
+  .movieInfo__title {
+    font-size: 30px;
+  }
+  .movie__description {
+    font-size: 15px;
+  }
 }
+

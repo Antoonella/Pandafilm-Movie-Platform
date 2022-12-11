@@ -11,7 +11,7 @@ function Nav() {
       </Link>
       <ul className="nav__links">
         <li className="nav__list">
-          <Link to="/" className='nav__link link__hover-effect link__hover-effect--white'>
+          <Link to="/" className='nav__link link__hover-effect link__hover-effect--white hidelink'>
             Home
           </Link>
         </li>
@@ -21,7 +21,7 @@ function Nav() {
           </Link>
         </li>
         <li className="nav__list">
-          <span className='nav__link no-cursor'>Contact</span>
+          <span className='nav__link no-cursor hidelink'>Contact</span>
         </li>
       </ul>
       </div>
