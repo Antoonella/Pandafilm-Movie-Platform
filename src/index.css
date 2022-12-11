@@ -488,8 +488,6 @@ MOVIE DETAILS
 }
 
 .play__btn {
-  /* display: flex; */
-  /* flex-direction: column; */
   height: 56px;
   background-color: #f9f9f9;
   border: none;
@@ -656,4 +654,70 @@ footer {
 
 .footer__link {
   padding: 0 8px;
+}
+
+/* SMALL PHONES, TABLETS, LARGE SMARTPHONES */
+@media (max-width: 768px) { 
+  .landing {
+    flex-wrap: wrap-reverse;
+  }
+  .header__title {
+    margin-top: 100px;
+    margin-right: 0;
+    align-items: center;
+  }
+  .title {
+    font-size: 55px;
+  }
+  .landing__img {
+    width: 400px;
+    height: 500px;
+  }
+  .search__input {
+    font-size: 30px;
+    height: 70px;
+    max-width: 715px;
+  }
+  .movies__header {
+    padding: 0 30px;
+    margin-top: 30px;
+  }
+  .row {
+    padding: 0px 30px;
+  }
+  .movie {
+    width: 50%;
+  }
+  .movie-card {
+    width: 320px;
+    height: 460px;
+  }
+  .movie-card__container {
+    padding: 7px 33px;
+  }
+  .movie__title {
+    font-size: 20px;
+    margin-top: 0px;
+  }
+  .movie__year {
+    font-size: 13px;
+    margin: 0px 0px 10px 0px;
+  }
+  .imdb {
+    font-size: 12px;
+    margin: 0;
+  }
+  .movie__img--skeleton {
+    width: 200px;
+    height: 240px;
+  }
+  .movieInfo__container {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+
+/* SMALL PHONES, LARGE SMARTPHONES */
+@media (max-width: 550px) {
+
 }
